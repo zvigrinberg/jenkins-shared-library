@@ -56,7 +56,7 @@ private GString populateInstallOptions(String secretValuesPath, boolean enableDe
 
 private String bringSideCars() {
 
-    String gitRepo = 'https://github.com/zvigrinberg/jenkins-resources.git'
+    String gitRepo = "https://github.com/zvigrinberg/jenkins-resources.git"
     def gitClone = sh(script: "git clone ${gitRepo}", returnStdout: true).trim()
     int position = gitRepo.lastIndexOf('/')
     String repoNamePlusGit = jenkinsResourcesRepo.substring(position + 1)
