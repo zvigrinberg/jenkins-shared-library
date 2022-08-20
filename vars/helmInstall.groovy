@@ -41,7 +41,7 @@ def call(String releaseName, String chartFileName, String releaseNamespace, Stri
 }
 
 private GString populateInstallOptions(String secretValuesPath, boolean enableDebug) {
-    GString installOptions = "";
+    GString installOptions = GString.EMPTY;
     if (secretValuesPath.trim() != "")
         installOptions = "$installOptions -f ${secretValuesPath}"
     if (enableDebug) {
