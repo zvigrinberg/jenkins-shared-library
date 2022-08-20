@@ -37,7 +37,7 @@ def call(String releaseName, String chartFileName, String releaseNamespace, Stri
             postRendererScript = "./side-cars/kustomize/kustomize"
         }
     }
-    def installationOutput = sh(script: "helm install ${releaseName} ${chartFileName}  -n ${releaseNamespace} --create-namespace -f ${valuesPath}  ${installOptions} --post-renderer= ${postRendererScript}", returnStdout: true).trim()
+    def installationOutput = sh(script: "helm install ${releaseName} ${chartFileName}  -n ${releaseNamespace} --create-namespace -f ${valuesPath}  ${installOptions} --post-renderer=${postRendererScript}", returnStdout: true).trim()
 
 }
 
