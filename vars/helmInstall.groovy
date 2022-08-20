@@ -59,7 +59,7 @@ private String bringSideCars() {
     String gitRepo = "https://github.com/zvigrinberg/jenkins-resources.git"
     def gitClone = sh(script: "git clone ${gitRepo}", returnStdout: true).trim()
     int position = gitRepo.lastIndexOf('/')
-    String repoNamePlusGit = jenkinsResourcesRepo.substring(position + 1)
+    String repoNamePlusGit = gitRepo.substring(position + 1)
     int gitExtensionPos = repoNamePlusGit.indexOf(".git")
     String repoName = repoNamePlusGit.substring(0,gitExtensionPos)
     def repoPathInWorkspace = sh(script: "cd ${repoName} ; git rev-parse --show-toplevel", returnStdout: true).trim()
