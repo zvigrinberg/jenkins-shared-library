@@ -20,3 +20,8 @@ def waitForDeployment(String deploymentName,String namespace)
     sh "oc wait --for=condition=Available deployment/${deploymentName} -n ${namespace}"
 
 }
+
+def deleteProject(String projectName)
+{
+    sh "oc delete project ${projectName}"
+}
