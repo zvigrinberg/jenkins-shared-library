@@ -14,4 +14,8 @@ def waitForDeployment(String deploymentName,String namespace,String timeoutInSec
 {
     sh "oc wait --for=condition=Available deployment/${deploymentName} --timeout=${timeoutInSeconds}s -n ${namespace}"
 
+}def waitForDeployment(String deploymentName,String namespace)
+{
+    sh "oc wait --for=condition=Available deployment/${deploymentName} -n ${namespace}"
+
 }
